@@ -124,7 +124,7 @@ PORT=3000
 log "Checking whether port $PORT is already in use..."
 
 if command -v netstat >/dev/null 2>&1; then
-if netstat -ano | grep -E "[:.]$PORT[[:space:]].*LISTENING" >/dev/null 2>&1; then
+if netstat -ano | grep -E "[:.]${PORT}[[:space:]].*LISTENING" >/dev/null 2>&1; then
 error "Port $PORT is already in use."
 error "Please stop the process using port $PORT and run the script again."
 exit 1
